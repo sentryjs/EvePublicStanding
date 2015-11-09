@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eve Public Standing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script id="augur.js" async data-fastcallback="augurData" src="https://cdn.augur.io/augur.min.js" data-warpspeed="5e"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+    <script src="js/socket.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-280325-6', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    <style>
+        body {
+            background-image: url("img/bg.jpg");
+            color: #F1F1F1;
+        }
+        
+        input, select, textarea {
+            color: #000;
+        }
+        </style>
+</head>
+<body>
+    <div id="results" style="position: absolute; left: 2px; top: 2px;">Connecting, please wait...</div>
+    <a style="position: absolute; top: 2px; right: 2px; color: #ff0000;" target="_blank" href="https://community.eveonline.com/support/api-key/CreatePredefined?accessMask=16"><strong>Create Key (SINGLE Character)</strong></a>
+    <div id="container" style="margin:0 auto; margin-top: 30px; margin-bottom: 50px; background: rgba(10, 10, 10, .5);">
+        <div class="row" style="width: 100%; padding-top: 30px;">
+            <h1 style="text-align: center;">Eve Public Standings</h1>
+        </div>
+    </div>
+    <div id="container" style="margin: 0 auto; width: 700px;">
+        <div class="row" style="background: rgba(10, 10, 10, .75); padding-top: 20px; margin-bottom: 20px; border-radius: 25px;">
+            <div class="u-full-width" style="padding: 20px;">
+                <h5 style="text-align: center;">Submit Contacts</h5>
+                <div class="row">
+                    <div class="four columns">
+                        <label for="keyid">KeyID</label>
+                        <input type="text" id="keyid"/>
+                        <input class="button-primary" type="button" id="sub-apiform" value="Submit"/>
+                    </div>
+                    <div class="four columns">
+                        <label for="vcode">vCode</label>
+                        <input type="text" id="vcode"/>
+                    </div>
+                    <div class="four columns">
+                        <label for="apiname">Character Name</label>
+                        <input type="text" id="apiname"/>
+                    </div>
+                    <input id="did" type="hidden"/>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="background: rgba(10, 10, 10, .75); padding-top: 20px; margin-bottom: 20px; border-radius: 25px;">
+            <div class="u-full-width" style="padding: 20px; margin-bottom: 20px;">
+                <div class="row">
+                    <div class="eleven columns" style="text-align: center;">
+                        <label for="cname"><h5>Search for Character/Corporation/Alliance</h5></label>
+                        <input type="text" id="cname"/> &nbsp;
+                        <input class="button-primary" type="button" id="sub-search" value="Search"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="twelve columns">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Standing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="dname"></td>
+                                <td id="dstanding"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
