@@ -1,4 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/sentrythethird/EvePublicStanding.png?label=ready&title=Ready)](https://waffle.io/sentrythethird/EvePublicStanding)
+
 # EvePublicStanding
 Public standing service. Discontinued.
 
@@ -28,3 +29,7 @@ Reddit post:  [https://redd.it/3qfb3v](https://redd.it/3qfb3v)
 > Why bother with this?
 
 *  I have always found Eve to be problematic in individual accountability because of the games design and you can never trust anyone because of this. Of course I know I can't solve this problem but I feel like I can help.  Eve has always had standings, sure. But they have never really meant anything before, and I wanted to change that. This system encourages you to set standings, since before the only benefit was seeing blue or red in chat and overview. Now you can actually affect other characters' reputations if you wish.
+
+**Project Status**
+
+[![Throughput Graph](https://graphs.waffle.io/sentrythethird/EvePublicStanding/throughput.svg)](https://waffle.io/sentrythethird/EvePublicStanding/metrics)
