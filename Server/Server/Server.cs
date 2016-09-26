@@ -26,7 +26,7 @@ namespace EvePublicStanding
             //protected WebSocketContext clientData = WebSocketContext();
             
             //var wssv = new WebSocketServer("ws://localhost:8080");
-            var wssv = new WebSocketServer(8080);
+            var wssv = new WebSocketServer(8181);
             wssv.AddWebSocketService<EPS>("/",
                 () => new EPS()
                 {
@@ -118,8 +118,8 @@ namespace EvePublicStanding
         {
             //var sanitized = CleanInput(e.Data, 0);
             Dictionary<string, string> query = JsonConvert.DeserializeObject<Dictionary<string, string>>(e.Data);
-            IDatabase redDb1 = redisConn.GetDatabase(1);
-            IDatabase redDb2 = redisConn.GetDatabase(2);
+            IDatabase redDb1 = redisConn.GetDatabase(10);
+            IDatabase redDb2 = redisConn.GetDatabase(11);
             var jss = new JavaScriptSerializer();
             if (query.ContainsKey("term")) // Name search
             {

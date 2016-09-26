@@ -3,9 +3,9 @@ function augurData ( json ) {
 }
 
 $(function () {
-	var epsSocket = new WebSocket("ws://starstuffindustries.com:8080/");
+	var epsSocket = new WebSocket("ws://starstuffindustries.com:8181/");
 	//var epsSocket = new WebSocket("ws://localhost:8080/");
-	
+
 	epsSocket.onopen = function (event) {
 		$('#results').html('Connected to server...');
 	};
@@ -51,6 +51,6 @@ $(function () {
 		} else {
 			$('#results').html('Error: You must enter a name to search for.');
 		}
-		
+
 	});
 });
