@@ -1,10 +1,6 @@
-function augurData ( json ) {
-	$('#did').val(json.device.ID);
-}
-
 $(function () {
-	var epsSocket = new WebSocket("ws://starstuffindustries.com:8181/");
-	//var epsSocket = new WebSocket("ws://localhost:8080/");
+	//var epsSocket = new WebSocket("ws://starstuffindustries.com:8181/");
+	var epsSocket = new WebSocket("ws://localhost:28181/");
 
 	epsSocket.onopen = function (event) {
 		$('#results').html('Connected to server...');
@@ -52,5 +48,9 @@ $(function () {
 			$('#results').html('Error: You must enter a name to search for.');
 		}
 
-	});
+    });
+
+    new Fingerprint2().get(function (result, components) {
+        $('#did').val(result);
+    });
 });

@@ -26,7 +26,7 @@ namespace EvePublicStanding
             //protected WebSocketContext clientData = WebSocketContext();
             
             //var wssv = new WebSocketServer("ws://localhost:8080");
-            var wssv = new WebSocketServer(8181);
+            var wssv = new WebSocketServer(28181);
             wssv.AddWebSocketService<EPS>("/",
                 () => new EPS()
                 {
